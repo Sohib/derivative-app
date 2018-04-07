@@ -1,0 +1,50 @@
+<h1>Learn Loops</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li *ngFor="let city of cities" class="list-group-item">{{ city }}</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of pepole;let x = index">
+          <th scope="row">{{ x+1 }}</th>
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{ person.city }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+</div>
+<h1>Pepole By City</h1>
+<div class="row" *ngFor="let group of peopleByCity">
+    <h2>{{ group.city }}</h2>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of group.pepole; let x = index">
+                <th scope="col">{{ x+1 }}</th>
+                <td>{{ person.name }}</td>
+                <td>{{ person.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

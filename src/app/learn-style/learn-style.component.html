@@ -1,0 +1,48 @@
+<div [style.font-weight]="'bolder'" [style.text-align]="'center'" [style.font-size]="'4em'" [style.font-family]="'Garamond'">
+  Sohib Hammed Algotimel
+</div>
+
+<div [ngStyle]="style">
+  Cleaner Styling
+</div>
+
+<div [ngClass]="{bordered: false}">this is not borderd</div>
+
+
+<div [ngClass]="{bordered: true}">this is borderd</div>
+
+<div [ngClass]="borderdObject" (click)="toggleBorder()">
+  Using object literal. Border {{ borderdObject.bordered ? "ON ✅ " : "OFF 🔴 " }}
+</div>
+
+<div>
+  <span class="bordered">{{ content }}</span>
+  <span ngNonBindable class="borderd">&larr; this is what {{ content }}</span>
+</div>
+
+
+
+<div [style.font-size.px]="size" [style.color]="color">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat recusandae asperiores voluptatem voluptatibus, excepturi
+  natus cum accusamus iusto nobis accusantium soluta neque, ipsa iure enim ea alias velit quam blanditiis?
+</div>
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <div class="form-group">
+      <label for="colorInput">Color</label>
+      <input #colorInput type="email" class="form-control" id="colorInput" aria-describedby="colorHelp" placeholder="Enter Color">
+      <small id="colorHelp" [ngClass]="['form-text', 'text-muted']">change the logo color</small>
+    </div>
+
+    <div class="form-group">
+      <label for="sizeInput">Font size</label>
+      <input #sizeInput type="number" class="form-control" id="sizeInput" aria-describedby="sizeHelp" placeholder="Enter font size">
+      <small id="sizeHelp" [ngClass]="['form-text', 'text-muted']">change the logo fontsizse</small>
+    </div>
+
+    <button type="submit" [ngClass]="['btn', 'btn-block','btn-primary']"  (click)="applyStyle(colorInput,sizeInput)">Apply</button>
+  </div>
+  <div class="col"></div>
+</div>

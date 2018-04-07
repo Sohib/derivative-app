@@ -1,0 +1,11 @@
+<div class="col" [ngSwitch]="checkEmail()">
+  <div class="alert alert-success" *ngSwitchCase="true" role="alert">
+    <h1 class="center">Email is Correct</h1>
+  </div>
+  <div class="alert alert-danger" *ngSwitchCase="false" role="alert">
+    <h1 class="center">Email is Wrong</h1>
+  </div>
+  <div class="alert alert-warning" *ngSwitchDefault role="alert">
+    <h1 class="center">Type Your Email</h1>
+  </div>
+</div>
